@@ -1,0 +1,55 @@
+<!--
+ <manifest>元素是AndroidManifest.xml的根元素
+	xmlns:android：指该文件的命名空间
+	package：指定Android应用所在的包
+	android:versionCode：指定应用的版本号，如果应用不断升级，则需要修改这个值
+	android:versionName：版本的名称，这个可以根据自己的喜好修改
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!--
+        	注册活动，android:name：指定要注册的Activity类名，
+        	其中，“.MainActivity”中的“.”指的是<manifest>中package属性指定的当前包，
+        	所以“.MainActivity”相当于“com.example.activity.MainActivity”。
+        	android:label：活动的标题栏内容，同时也是启动器(Launcher)中应用程序显示的名称。
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:label="ActivityLifeCycle" >
+            <intent-filter>
+
+                <!-- 以下两行表示MainActivity是本项目的主活动，在手机上点击应用图标，首先启动的是此活动 -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 注册NormalActivity -->
+        <activity
+            android:name=".NormalActivity"
+            android:label="NormalActivity" >
+        </activity>
+
+        <!-- 注册DialogActivity，使用对话框主题 -->
+        <activity
+            android:name=".DialogActivity"
+            android:label="DialogActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+    </application>
+
+</manifest>

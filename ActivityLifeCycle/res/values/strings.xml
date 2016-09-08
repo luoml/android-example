@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">ActivityExample</string>
+    
+    <string name="dialogId">dialogId</string>
+    <string name="normalId">normalId</string>
+    
+    <string name="dialogBtn">Start Dialog Activity</string>
+    <string name="normalBtn">Start Normal Activity</string>
+    
+    <string name="dialogActivity">Dialog Activity</string>
+    <string name="normalActivity">Normal Activity</string>
+
+</resources>

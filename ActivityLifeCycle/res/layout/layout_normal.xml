@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 
+    match_parent: 填满父控件的空白[Android 2.2]；与fill_parent一样，如果为了兼容低版本，建议使用fill_parent
+    wrap_content: 内容大小刚好覆盖当前控件
+     -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/normalActivity" />
+
+</LinearLayout>
