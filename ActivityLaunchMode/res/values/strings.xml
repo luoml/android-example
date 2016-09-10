@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActivityLaunchMode</string>
+    
+    <string name="standardBtn">standard</string>
+
+</resources>
