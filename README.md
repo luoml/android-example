@@ -52,20 +52,19 @@ Activity有4种启动模式：standard、singleTop、singleTask、singleInstance
 #### standard
 > 标准模式，默认，每次都会启动一个新的活动实例
 
-1. 新建FirstActivity 
-<br>
+1. 新建FirstActivity <br>
 ![FirstActivity](images/ActivityLaunchMode/FirstActivity.jpg "FirstActivity")
 
-2. 注册FirstActivity
-<br>![AndroidManifest](images/ActivityLaunchMode/AndroidManifest-standard.jpg "AndroidManifest")
-3. 启动程序，连点两次按钮，可以看到日志中打印如下日志<br>![standard](images/ActivityLaunchMode/standard.jpg "standard")
+2. 注册FirstActivity<br>
+![AndroidManifest](images/ActivityLaunchMode/AndroidManifest-standard.jpg "AndroidManifest")
+3. 启动程序，连点两次按钮，可以看到日志中打印如下日志<br>
+![standard](images/ActivityLaunchMode/standard.jpg "standard")
 4. 由于此时返回栈中存在3个实例，所以点击Back键三次才能退出程序。<br>
 
 #### singleTop
 > 栈顶复用模式，首先判断栈顶Activity是否是要启动的Activity，如果是则直接引用这个Activity；如果不是则创建新的Activity。
 
-1. 测试同一Activity内跳转
-<br>
+1. 测试同一Activity内跳转<br>
 仍延用上一示例，将AndroidManifest中FirstActivity的启动模式改为singleTop <br>
 ![AndroidManifest-singleTop](images/ActivityLaunchMode/AndroidManifest-singleTop.jpg "AndroidManifest") <br>
 此时会发现，无论点击多少次按钮，都只会存在一个实例。<br>
