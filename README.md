@@ -49,11 +49,37 @@ MainActivity包含两个按钮，点击按钮分别跳转至NormalActivity、Dia
 
 Activity有4种启动模式：standard、singleTop、singleTask、singleInstance
 
-> 测试测试standard启动模式
-> standard：标准模式，默认，每次都会启动一个新的活动实例
+#### standard
+> 标准模式，默认，每次都会启动一个新的活动实例
 
-1. 新建FirstActivity，并放置Button
-2. 注册Button点击事件，点击Button，仍然跳转到FirstActivity
-3. 在AndroidManifest.xml中设置FirstActivity的android:launchMode为"standard"（也可不设置，默认即为standard）
-4. 启动程序，连点两次按钮，可以看到日志中打印如下日志![standard](images/ActivityLaunchMode/standard.jpg "standard")
-5. 同时，退出程序时，你会发现有几个实例就需要点击几次Back
+1. 新建FirstActivity ![FirstActivity](images/ActivityLaunchMode/FirstActivity.jpg "FirstActivity")
+2. 注册FirstActivity ![AndroidManifest](images/ActivityLaunchMode/AndroidManifest-standard.jpg "AndroidManifest")
+3. 启动程序，连点两次按钮，可以看到日志中打印如下日志![standard](images/ActivityLaunchMode/standard.jpg "standard")
+4. 由于此时返回栈中存在3个实例，所以点击Back键三次才能退出程序。
+
+#### singleTop
+> 栈顶复用模式，首先判断栈顶Activity是否是要启动的Activity，如果是则直接引用这个Activity；如果不是则创建新的Activity。
+
+1. 测试同一Activity内跳转
+<br>
+仍延用上一示例，将AndroidManifest中FirstActivity的启动模式改为singleTop <br>
+![AndroidManifest-singleTop](images/ActivityLaunchMode/AndroidManifest-singleTop.jpg "AndroidManifest") <br>
+此时会发现，无论点击多少次按钮，都只会存在一个实例。<br>
+![singleTop](images/ActivityLaunchMode/singleTop.jpg "singleTop") <br>
+由于返回栈中只存在一个实例，所以退出程序时，只需要点击Back键一次。 <br>
+
+2. 测试不同Activity间跳转
+<br>
+新建SecondActivity<br>
+![SecondActivity](images/ActivityLaunchMode/SecondActivity.jpg "SecondActivity") <br>
+将其注册为普通活动。<br>
+![AndroidManifest SecondActivity](images/ActivityLaunchMode/AndroidManifest-SecondActivity.jpg "AndroidManifest SecondActivity")<br>
+修改上一示例中的FirstActivity，新增按钮singleTop，当点击时，使其由FirstActivity跳转到SecondActivity。<br>
+![FirstActivity](images/ActivityLaunchMode/FirstActivity-topBtn.jpg "FirstActivity")<br>
+启动程序，会先创建一个FirstActivity的实例<br>
+![singleTop-1](images/ActivityLaunchMode/singleTop-1.jpg "singleTop-1") <br>
+点击singleTop，会跳转到SecondActivity <br>
+![singleTop-1-2](images/ActivityLaunchMode/singleTop-1-2.jpg "singleTop-1-2") <br>
+点击SecondActivity的返回按键，再次跳转到FirstActivity。由于返回栈的栈顶是SecondActivity，所以系统会再次创建一个FirstActivity的实例 <br>
+![singleTop-2-1](images/ActivityLaunchMode/singleTop-2-1.jpg "singleTop-2-1") <br>
+当点击Back键退出时，会先从FirstActivity退到SecondActivity，再从SecondActivity退至FirstActivity，最后再次点击Back时才会退出程序。

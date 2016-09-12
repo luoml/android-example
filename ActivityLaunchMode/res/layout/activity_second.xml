@@ -5,15 +5,9 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/defaultBtn"
+        android:id="@+id/rtnFirstBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/defaultBtn" />
-    
-    <Button
-        android:id="@+id/topBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/topBtn" />
+        android:text="@string/rtnFirstBtn" />
 
 </LinearLayout>

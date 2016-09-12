@@ -2,7 +2,12 @@
 <resources>
 
     <string name="app_name">ActivityLaunchMode</string>
-    
-    <string name="standardBtn">standard</string>
+    <string name="defaultBtn">standard</string>
+    <string name="topBtn">singleTop</string>
+    <string name="taskBtn">singleTask</string>
+    <string name="instanceBtn">singleInstance</string>
+    <string name="second_app_name">SecondActivity</string>
+    <string name="rtnFirstBtn">返回FirstActivity</string>
+    <string name="third_app_name">ThirdActivity</string>
 
 </resources>

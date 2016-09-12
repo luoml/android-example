@@ -31,23 +31,42 @@ public class FirstActivity extends Activity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.d(TAG, this.toString());
-		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_first);
 		
+		Log.i(TAG, this.toString());
+		
 		/**
-		 * 测试默认启动模式[standard]
-		 * 设置AndroidManifest.xml中FirstActivity活动的android:launchMode为"standard"（也可不设置，默认即为standard）
-		 * 在FirstActivity中放置按钮，点击Button仍然跳转到FirstActivity
-		 * 验证FirstActivity的实例是否会重复创建
+		 * 点击firstBtn仍然跳转到FirstActivity，验证FirstActivity的实例是否会重复创建
+		 * 配置AndroidManifest.xml中FirstActivity活动的启动模式
+		 * 
+		 * 当android:launchMode="standard"（也可不设置，默认即为standard），测试默认启动模式
+		 * 当android:launchMode="singleTop"，测试singleTop模式
+		 * 
+		 * 可以发现，当standard模式启动时，点击几次就会有几个FirstActivity实例
+		 * 而当singleTop模式启动时，不管点击多少次都只会有一个FirstActivity实例
 		 */
-		Button standardBtn = (Button) findViewById(R.id.firstBtn);
-		standardBtn.setOnClickListener(new OnClickListener() {
+		Button defaultBtn = (Button) findViewById(R.id.defaultBtn);
+		defaultBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				//显示Intent传递活动
 				Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		/**
+		 * 点击topBtn跳转到SecondActivity，验证FirstActivity的实例是否会重复创建
+		 * 配置AndroidManifest.xml中FirstActivity活动的启动模式为singleTop
+		 * 
+		 */
+		Button topBtn = (Button) findViewById(R.id.topBtn);
+		topBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//显示Intent传递活动
+				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 				startActivity(intent);
 			}
 		});
