@@ -59,10 +59,23 @@ public class FirstActivity extends Activity {
 		/**
 		 * 点击topBtn跳转到SecondActivity，验证FirstActivity的实例是否会重复创建
 		 * 配置AndroidManifest.xml中FirstActivity活动的启动模式为singleTop
-		 * 
 		 */
 		Button topBtn = (Button) findViewById(R.id.topBtn);
 		topBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//显示Intent传递活动
+				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		/**
+		 * 点击taskBtn跳转到SecondActivity，验证singleTask启动模式
+		 * 配置AndroidManifest.xml中FirstActivity活动的启动模式为singleTask
+		 */
+		Button taskBtn = (Button) findViewById(R.id.taskBtn);
+		taskBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				//显示Intent传递活动
@@ -111,6 +124,7 @@ public class FirstActivity extends Activity {
 	@Override
 	protected void onRestart() {
 		super.onRestart();
+		Log.i(TAG, "onRestart");
 	}
 	
 	/* (non-Javadoc)

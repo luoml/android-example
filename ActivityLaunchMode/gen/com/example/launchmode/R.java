@@ -26,7 +26,8 @@ public final class R {
     }
     public static final class id {
         public static final int defaultBtn=0x7f070000;
-        public static final int rtnFirstBtn=0x7f070002;
+        public static final int rtnFirstBtn=0x7f070003;
+        public static final int taskBtn=0x7f070002;
         public static final int topBtn=0x7f070001;
     }
     public static final class layout {
