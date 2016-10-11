@@ -25,7 +25,18 @@
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:label="@string/second_app_name" >
+            android:label="@string/second_app_name"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="com.example.launchmode.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.launchmode.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ThirdActivity"
+            android:label="@string/third_app_name" >
         </activity>
     </application>
 

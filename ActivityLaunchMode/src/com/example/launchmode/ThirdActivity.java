@@ -1,30 +1,25 @@
 /**
- * @Title SecondActivity.java
+ * @Title ThirdActivity.java
  * @Package com.example.launchmode
- * @Description 注册为普通活动，配合测试singleTop、singleTask、singleInstance
+ * @Description 注册为普通活动，配合测试singleInstance
  * @author ml_luo@126.com
- * @date 2016-9-11
+ * @date 2016-10-10
  * @version V1.0
  */
 package com.example.launchmode;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 /**
- * @ClassName SecondActivity
- * @Description 测试singleTop、singleTask、singleInstance
+ * @ClassName ThirdActivity
+ * @Description 注册为普通活动，配合测试singleInstance
  * @author ml_luo@126.com
- * @date 2016-9-11
+ * @date 2016-10-10
  */
-public class SecondActivity extends Activity {
-
-	private static final String TAG = "SecondActivity";
+public class ThirdActivity extends Activity {
+	private static final String TAG = "ThirdActivity";
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -32,30 +27,12 @@ public class SecondActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_second);
 		
 		Log.i(TAG, this.toString());
 		Log.w(TAG, "Task id is " + getTaskId());
-		
-		Button rtnFirstBtn = (Button) findViewById(R.id.rtnFirstBtn);
-		rtnFirstBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(SecondActivity.this, FirstActivity.class);
-				startActivity(intent);
-			}
-		});
-		
-		Button rtnThirdBtn = (Button) findViewById(R.id.rtnThirdBtn);
-		rtnThirdBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
-				startActivity(intent);
-			}
-		});
+		setContentView(R.layout.activity_third);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onStart()
 	 */
@@ -63,7 +40,7 @@ public class SecondActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
 	 */
@@ -71,7 +48,7 @@ public class SecondActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onPause()
 	 */
@@ -87,22 +64,21 @@ public class SecondActivity extends Activity {
 	protected void onStop() {
 		super.onStop();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onRestart()
 	 */
 	@Override
 	protected void onRestart() {
 		super.onRestart();
-		Log.i(TAG, "onRestart");
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onDestroy()
 	 */
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		Log.i(TAG, "onDestroy");
 	}
+
 }

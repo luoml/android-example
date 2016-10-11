@@ -35,6 +35,7 @@ public class FirstActivity extends Activity {
 		setContentView(R.layout.activity_first);
 		
 		Log.i(TAG, this.toString());
+		Log.w(TAG, "Task id is " + getTaskId());
 		
 		/**
 		 * 点击firstBtn仍然跳转到FirstActivity，验证FirstActivity的实例是否会重复创建
@@ -76,6 +77,19 @@ public class FirstActivity extends Activity {
 		 */
 		Button taskBtn = (Button) findViewById(R.id.taskBtn);
 		taskBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//显示Intent传递活动
+				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		/**
+		 * singleInstance
+		 */
+		Button instanceBtn = (Button) findViewById(R.id.instanceBtn);
+		instanceBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				//显示Intent传递活动

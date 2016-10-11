@@ -26,22 +26,26 @@ public final class R {
     }
     public static final class id {
         public static final int defaultBtn=0x7f070000;
-        public static final int rtnFirstBtn=0x7f070003;
+        public static final int instanceBtn=0x7f070003;
+        public static final int rtnFirstBtn=0x7f070004;
+        public static final int rtnThirdBtn=0x7f070005;
         public static final int taskBtn=0x7f070002;
         public static final int topBtn=0x7f070001;
     }
     public static final class layout {
         public static final int activity_first=0x7f030000;
         public static final int activity_second=0x7f030001;
+        public static final int activity_third=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int defaultBtn=0x7f050001;
         public static final int instanceBtn=0x7f050004;
         public static final int rtnFirstBtn=0x7f050006;
+        public static final int rtnThirdBtn=0x7f050007;
         public static final int second_app_name=0x7f050005;
         public static final int taskBtn=0x7f050003;
-        public static final int third_app_name=0x7f050007;
+        public static final int third_app_name=0x7f050008;
         public static final int topBtn=0x7f050002;
     }
     public static final class style {
