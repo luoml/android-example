@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UILayout</string>
+
+    <string name="txtView">TextView</string>
+    <string name="editTxtHint">EditText</string>
+    <string name="imgDesc">picture hint</string>
+
+    <string name="getTxtBtn">获取EditText内容</string>
+    <string name="chgImgBtn">更换ImageView图片</string>
+    <string name="proBarBtn">测试ProgressBar</string>
+    <string name="alertBtn">测试AlertDialog</string>
+    <string name="progressBtn">测试ProgressDialog</string>
+</resources>

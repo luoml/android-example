@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+    	layout_width　控件宽度
+    	layout_height 控件高度
+    	
+    	match_parent\fill_parent　使当前控件填充父控件
+    	wrap_content　使当前控件刚好包含控件内容
+    	
+    	background 背景色
+    	textColor　字体颜色
+    	textSize 文本大小
+    	gravity 文字对齐方式    -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cfc"
+        android:gravity="center"
+        android:text="@string/txtView"
+        android:textColor="#f00"
+        android:textSize="28sp" />
+
+    <!--  
+    	hint 提示信息
+    	maxLines 最大行数
+    -->
+    <EditText 
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editTxtHint"
+        android:maxLines="1" />
+
+    <Button 
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/getTxtBtn" />
+        
+    <ImageView 
+        android:id="@+id/imgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@string/imgDesc" />
+
+    <Button 
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chgImgBtn" />
+    
+    <!--  
+    	style 指定进度条样式
+    	android:max 设置进度条最大值
+    	android:visibility 可见属性，可选值有以下三种：
+    		visible 控件可见
+    		invisible 控件不可见，但仍占据原来的位置和大小
+    		gone 控件不可见，且不占用任何屏幕空间
+    -->
+    <ProgressBar 
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100" />
+    
+    <Button 
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/proBarBtn" />
+    
+    <Button 
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alertBtn" />
+    
+    <Button 
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/progressBtn" />
+    
+</LinearLayout>

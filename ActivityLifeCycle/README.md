@@ -1,5 +1,3 @@
-
-
 本示例主要分为三个Activity：MainActivity（主活动，程序入口）、NormalActivity（普通活动）、DialogActivity（对话框式活动）。<br>
 
 MainActivity包含两个按钮，点击按钮分别跳转至NormalActivity、DialogActivity，如下：<br>

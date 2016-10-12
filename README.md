@@ -10,3 +10,7 @@
 ### 2. ActivityLaunchMode
 演示Activity启动模式。 [更多](/ActivityLaunchMode/README.md)
 <br>
+
+### 3. UILayout
+演示UI控件、布局等。 [更多](/UILayout/README.md)
+<br>
